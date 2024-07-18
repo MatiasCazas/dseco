@@ -1,0 +1,31 @@
+.small-image {
+    width: 40px;
+    height: 35px;
+    margin-right: 10px;
+    position: absolute;
+    left: -40px; /* Ajusta este valor según sea necesario */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.half-gray-white {
+    position: relative;
+    height: 100vh;
+    background-color: white; /* White background for the top */
+}
+
+.half-gray-white::before {
+    content: '';
+    position: absolute;
+    top: 20%; /* 20% white at the top */
+    left: 0;
+    width: 100%;
+    height: 80%; /* 80% gray at the bottom */
+    background-color: gray;
+    z-index: -1; /* Ensure it is behind the content */
+}
+.overflow-element {
+    position: relative;
+    background-color: transparent;
+    margin-bottom: 2rem; /* Adjust as needed */
+}
