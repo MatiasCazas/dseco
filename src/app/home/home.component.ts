@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArticulosService } from '../services/articulos.service';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +10,20 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(
+    private articulosService: ArticulosService
+  ) {}
+
+  articulos: any[] = []
+
+  async ngOnInit(){
+    this.articulosService.getAllArticulos().subscribe(
+      data => {
+        //this.articulos.push(data.find(data[0].IdArticulo == 58))
+      },
+      error =>{
+        console.error(error)
+      }
+    )
+  }
 }

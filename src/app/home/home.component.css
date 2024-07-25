@@ -3,7 +3,7 @@
     height: 35px;
     margin-right: 10px;
     position: absolute;
-    left: -40px; /* Ajusta este valor según sea necesario */
+    left: -40px; /* Adjust this value as necessary */
     top: 50%;
     transform: translateY(-50%);
 }
@@ -21,9 +21,10 @@
     left: 0;
     width: 100%;
     height: 80%; /* 80% gray at the bottom */
-    background-color: gray;
+    background-color: #e6e6e6;
     z-index: -1; /* Ensure it is behind the content */
 }
+
 .overflow-element {
     position: relative;
     background-color: transparent;
