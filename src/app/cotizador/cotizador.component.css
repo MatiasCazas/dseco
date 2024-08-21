@@ -1,0 +1,171 @@
+.cotizador{
+    padding: 20px 25px;
+    height: fit-content;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.cotizador--header{
+    width: 450px;
+    height: auto;
+    background-color:#e23531;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #f3f3f3;
+    justify-content: center;
+    align-items: center;
+}
+.titulo{
+    width: 100%;
+    font-size: 2rem;
+}
+.subtitulo{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.cotizador--card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #e23531;
+    text-align: center;
+   
+}
+.cotizador--card h3{
+    font-size: 1rem;
+}
+
+.card--1:hover{
+    border-color: solid #333333;
+}
+
+form{
+    margin-bottom: 30px;
+}
+
+.titulo--presupuesto{
+    font-size: 2.5rem;
+}
+.subtitulo--presupuesto{
+    color:grey;
+}
+.h4{
+    font-size: 3rem;
+}
+h5 {
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+label {
+    color: grey; 
+}
+.form-control{
+    background-color: #f3f3f3;
+}
+.form-control, .form-control-file, .btn {
+    border-radius: 0;
+}
+
+button {
+    background-color: #333;
+    color: white;
+}
+
+
+.custom-file-input + .btn {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.contenedor--principal{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    gap: 2rem;
+    background-color: #f3f3f3;
+}
+.menu--imgs{
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.menu--display{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: end;
+}
+.medio{
+    border-top: 2px solid #e23531;
+    border-bottom: 2px solid #e23531;
+}
+
+.images{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: end;
+    padding-left: 10%;
+}
+.h3--images{
+    background-color: #e23531;
+    color: white;
+    font-weight: 900;
+    width: fit-content;
+}
+.h2--medidas{
+    color:#e23531;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+.vl {
+    border-left: 6px solid rgb(94, 88, 88);
+    height: 500px;
+  }
+
+.formulario--2{
+    display: flex;
+    flex-direction: row;
+}
+.formulario--2 > *{
+    display: flex;
+    flex-direction: column;
+}
+.formS{
+    display: flex;
+    flex-direction: row;
+}
+.formS span{
+    color: #e23531;
+    align-content: center;
+}
+.agregar--formulario{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.botones--cv{
+    margin-top: 10px;
+    display: flex;
+    gap: 1rem;
+}
+.pared--p{
+    color: #e23531;
+    font-weight: bold;
+}

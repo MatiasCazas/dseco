@@ -1,16 +1,170 @@
-<div class="container" style="background-color: grey;">
-
-
-    <div class="row">
-        <div class="col">
-            <img src="/assets/images/Icono_paredes_interiores_1.png">
+<div class="container-fluid align-self-center cotizador">
+    <div class="cotizador--header">
+            <h1 class=" titulo"><strong>COTIZADOR</strong></h1>
+            <h2 class="subtitulo" > CALCULÁ Y CONOCÉ LO QUE VAS A NECESITAR PARA TU PROYECTO </h2>
+    </div>
+   <ng-container *ngIf="istrue">
+    <div class="cotizador--card">
+        <div #asParedInterior (click)="onValid('paredInterior')" class="card--1">
+            <img src="/assets/images/Icono_paredes_interiores_1.png" width="100px" height="100px" alt="">
+            <h3><strong>Paredes interiores</strong></h3>
         </div>
-        <div class="col">
-
-        </div>
-        <div class="col">
-
+        <div #asRevestimiento (click)="onValid('revestimientos')" class="card--2">
+            <img class="img--card--2" src="/assets/images/Icono_paredes_interiores_2.png"  width="100px" height="100px" alt="">
+            <h3><strong>Revestimientos</strong></h3>
+        </div>  
+        <div #asCielorrasos class="card--2" (click)="onValid('cielorraso')">
+            <img src="/assets/images/Icono_paredes_interiores_3.png"  width="100px" height="100px" alt="">
+            <h3><strong>Cielorrasos</strong></h3>
         </div>
     </div>
-
+   </ng-container>
 </div>
+<ng-container *ngIf="istrue">
+    <div class="container mt-5">
+        <h2 class="text-center text-danger font-weight-bold titulo--presupuesto">PRESUPUESTO</h2>
+        <h3 class="text-center  font-weight-bold subtitulo--presupuesto">A TU MEDIDA</h3>
+        <p class="text-center text-muted">Adjuntá el plano de tu proyecto. Un vendedor hará el cálculo de materiales y te enviará el presupuesto a la brevedad</p>
+        <h5 class="text-danger font-weight-bold">+ AÑADÍ UN PLANO O ESQUEMA DE TU PARED</h5>
+        
+        <h4 class="text-danger font-weight-bold"><strong>CONTACTO</strong></h4>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="nombreApellido" class="font-weight-bold">Nombre y Apellido</label>
+                    <input type="text" class="form-control" id="nombreApellido">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email" class="font-weight-bold">E-mail</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="telefono" class="font-weight-bold">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="tipoPared" class="font-weight-bold">Seleccione el tipo de pared</label>
+                    <select id="tipoPared" class="form-control">
+                        <option selected>Seleccionar...</option>
+                        <option>Pared tipo 1</option>
+                        <option>Pared tipo 2</option>
+                        <option>Pared tipo 3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ancho" class="font-weight-bold">Ancho</label>
+                    <input type="text" class="form-control" id="ancho">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="alto" class="font-weight-bold">Alto</label>
+                    <input type="text" class="form-control" id="alto">
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="file" class="custom-file-input" id="archivo" style="display: none;">
+                <button type="button" class="btn btn-secondary">Seleccionar archivo</button>
+            </div>
+            <div class="form-group">
+                <label for="detalles" class="font-weight-bold">Detalles del proyecto</label>
+                <textarea class="form-control" id="detalles" rows="4"></textarea>
+            </div>
+            <div class="text-right">
+                <button type="submit" class="btn btn-secondary text-light" style="vertical-align: -100%;">Enviar</button>
+            </div>
+        </form>
+    </div>
+    
+</ng-container>
+<ng-container class="contenedor--principal" *ngIf="!istrue">
+    <div class="contenedor--principal">
+        <div class="menu--imgs">
+            <div (click)="onValid('paredInterior')">
+                <img src="/assets/images/Icono_paredes_interiores_1.png" width="100px" height="100px" alt="">
+                <p>Paredes interiores</p>
+            </div>
+            <div class="medio" (click)="onValid('revestimientos')">
+                <img src="/assets/images/Icono_paredes_interiores_2.png" width="100px" height="100px" alt="">
+                <p>Revestimientos</p>
+            </div>
+            <div (click)="onValid('cielorraso')">
+                <img src="/assets/images/Icono_paredes_interiores_3.png" width="100px"  height="100px">
+                <p>Cielorraso</p>
+            </div>
+
+        </div>
+        <div class="vl"></div>
+        <div class="menu--display">
+           <div class="images"> 
+                <div *ngIf="selectedOption === 'paredInterior'"> 
+                    @for (img of paredInteriorImgs; track img) {
+                        <img [src]="img" width="400px" height="400px">
+                    }
+                </div>
+                <div *ngIf="selectedOption === 'revestimientos'"> 
+                    @for (img of revestimientoImgs; track img) {
+                        <img [src]="img" width="350px" height="350px">
+                    }
+                </div>
+                <div *ngIf="selectedOption === 'cielorraso'"> 
+                    @for (img of cielorrasoImgs; track img) {
+                        <img [src]="img" width="400px" height="400px">
+                    }
+                </div>
+            </div>
+            <div>
+                <div>
+                    @if (selectedOption === 'paredInterior') {
+                        <h3 class="h3--images">{{headers[0]}}</h3>
+                    }@else if (selectedOption === 'revestimientos') {
+                        <h3 class="h3--images">{{headers[1]}}</h3>
+                    }@else {
+                        <h3 class="h3--images">{{headers[2]}}</h3>
+                    }
+                    <h2 class="h2--medidas"> MEDIDAS</h2>
+                    <p>Ingresá el largo y alto de las paredes a realizar para saber los materiales que vas a necesitar</p>
+                </div>
+                <form (formGroup)="paredForm">
+                    <div formArrayName="formArray">
+                        <div *ngFor="let formGroup of formArray; let i = index" (formGroup)="formGroup">
+                          <p class="pared--p">Pared {{i + 1}}</p>
+                          <div class="formS">
+                            <div class="form-group col-md-4">
+                                <label for="largo" class="font-weight-bold">Largo</label>
+                                <input type="number" class="form-control" formControlName="largo" id="largo">
+                              </div>
+                              <span><strong>X</strong></span>
+                              <div class="form-group col-md-4">
+                                <label for="alto" class="font-weight-bold">Alto</label>
+                                <input type="number" class="form-control" formControlName="alto" id="alto">
+                              </div>
+                              <span><strong>=</strong></span>
+                              <div class="form-group col-md-4">
+                                <label for="superficie" class="font-weight-bold">Superficie</label>
+                                <input type="number" class="form-control" formControlName="superficie" id="superficie">
+                              </div>
+                            </div>
+                          </div>           
+                          </div>
+                                   
+                    <div class="agregar--formulario" (click)="addForm()">
+                        <img src="/assets/images/plus.png" alt="">
+                        <span>AGREGAR FORMULARIO</span>
+                    </div>
+                    <div class="botones--cv">
+                        <button type="submit" class="btn btn-secondary text-light">Calcular</button>
+                        <button type="submit" (click)="volver()" class="btn btn-secondary text-light">Volver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+   </ng-container>
+
+   <!--
+   
+   
+   -->
