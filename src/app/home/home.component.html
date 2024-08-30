@@ -2,7 +2,6 @@
     <div class="slider-container">
         <div class="slider" [style.transform]="'translateX(' + translateValue + '%)'">
             <div class="slide" *ngFor="let image of images; let i = index">
-                <p>askjldbajksdbl</p>
                 <img [src]="image" alt="Slide {{i + 1}}">
             </div>
         </div>
