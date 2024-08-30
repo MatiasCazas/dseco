@@ -54,3 +54,10 @@
     box-shadow: none;
     padding: 0;
 }
+
+.source-code-pro-unique-text {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Puedes cambiar el valor del peso según lo necesites */
+    font-style: normal;
+}
