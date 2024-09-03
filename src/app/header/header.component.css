@@ -1,0 +1,13 @@
+.input-round {
+    background-color: #ca1617;
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+}
+
+.input-icon-round {
+    background-color: #ca1617; 
+    border-left: none; 
+    color: white;
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+}

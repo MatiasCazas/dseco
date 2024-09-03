@@ -1,5 +1,5 @@
 
-    <div class="slider-container">
+    <div class="slider-container" style="margin-top: 1%;">
         <div class="slider" [style.transform]="'translateX(' + translateValue + '%)'">
             <div class="slide" *ngFor="let image of images; let i = index">
                 <img [src]="image" alt="Slide {{i + 1}}">
@@ -25,29 +25,28 @@
         <span class="sr-only">Next</span>
     </a> -->
 
-<div class="container-sm" style="background-color:#d8d6d7;padding-top: 3;padding-bottom: 2rem;">
+    <div class="container-sm" style="background-color:#d8d6d7; padding-bottom: 2rem; margin-bottom: 2rem;">
 
-    <div class="container text-center justify-content-center" style="background-color: #DC3545; max-width: 600px; padding: 1rem; margin: 0 auto;margin-top: 1%;">
-        <h2 class="align-items-center text-white">COTIZADOR</h2>
-        <p class="text-white">CALCULA Y CONOCE LO QUE VAS A NECESITAR PARA TU PROYECTO</p>
+        <div class=" row text-center justify-content-center align-items-center" style="background-color: #DC3545; max-width: 600px; padding: 1rem; margin: 0 auto; margin-top: 1%; margin-bottom: 1rem;">
+            <h2 class="align-items-center text-white">COTIZADOR</h2>
+            <p class="text-white">CALCULA Y CONOCE LO QUE VAS A NECESITAR PARA TU PROYECTO</p>
+        </div>
+        
+        <div class="row no-gutters text-center justify-content-center" style="padding-top: 3rem;">
+            <div class="col-lg-3 col-sm-3">
+                <img src="assets/images/PAREDES_INTERIOR.png" class="w-100">
+            </div>
+    
+            <div class="col-lg-3 col-sm-3">
+                <img src="assets/images/REVESTIMIENTOS.png" class="w-100">
+            </div>
+    
+            <div class="col-lg-3 col-sm-3">
+                <img src="assets/images/CIELORRASO.png" class="w-100">
+            </div>
+        </div>
     </div>
     
-
-    <div class="row no-gutters text-center justify-content-center" style="padding-top: 3rem;">
-        <div class="col-lg-3 col-sm-3">
-            <img src="assets/images/PAREDES_INTERIOR.png" class="w-100">
-        </div>
-
-        <div class="col-lg-3 col-sm-3">
-            <img src="assets/images/REVESTIMIENTOS.png" class="w-100">
-        </div>
-
-        <div class="col-lg-3 col-sm-3">
-            <img src="assets/images/CIELORRASO.png" class="w-100">
-        </div>
-    </div>
-    <div  style="background-color: lightgrey;"></div>
-</div>
 
 <div class="container d-flex justify-content-center" style="padding-top: 2rem;">
     <div class="card border-0" style="max-width: 850px; border-radius: 20px 20px 0px 20px; background-color: #dedcdd; padding-bottom: 1rem;">
