@@ -17,7 +17,7 @@ export class HomeComponent {
 
   articulos: any[] = []
 
-  images: string[] = ['assets/images/Slide_1_digi_seco.png','assets/images/segunda_img_home.jpeg'];
+  images: string[] = ['assets/images/Banners-Digi-seco_1.png','assets/images/Banners-Digi-seco_2.png'];
   currentIndex = 0;
   translateValue = 0; 
 

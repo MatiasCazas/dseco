@@ -11,9 +11,9 @@ import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms'
 export class CotizadorComponent {
   istrue = true;
   selectedOption = '';
-  paredInteriorImgs = ['assets/images/pared_interior_resistente_a_la_humedad.png', 'assets/images/pared_interior .png']
-  revestimientoImgs = ['assets/images/revestimiento_interior.png', 'assets/images/Pared_exterior_siding.png', 'assets/images/pared_exterior_superboard.png']
-  cielorrasoImgs = ['assets/images/cielorrasos.png', 'assets/images/CIELORRASO.png', 'assets/images/cielorraso_pvc.png']
+  paredInteriorImgs = ['assets/images/Web_-DIGI-SECO_pared-anti-humedad(1).png', 'assets/images/Web_-DIGI-SECO_pared-interior.png']
+  revestimientoImgs = ['assets/images/Web_-DIGI-SECO_Revestimiento-interior.png', 'assets/images/Web_-DIGI-SECO_pared-exterior-sinding.png', 'assets/images/Web_-DIGI-SECO_pared-exterior-superboard.png']
+  cielorrasoImgs = ['assets/images/Web_-DIGI-SECO_cielorraso.png', 'assets/images/Web_-DIGI-SECO_cielorraso-desmontable.png', 'assets/images/Web_-DIGI-SECO_cielorraso-pvc.png']
   headers = ['Pared Interior Durlock', 'Revestimiento Interior Durlock', 'Cielorraso Durlock']
   onValid(str: string): void{
     this.istrue= false;
