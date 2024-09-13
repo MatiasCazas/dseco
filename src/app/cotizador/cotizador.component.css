@@ -96,6 +96,8 @@ button {
     background-color: #f3f3f3;
 }
 .menu--imgs{
+    min-height: 750px;
+    max-height: 750px;
     margin-left: 15px;
     display: flex;
     flex-direction: column;
