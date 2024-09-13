@@ -78,21 +78,39 @@
         </form>
     </div>
     
-</ng-container>
+</ng-container> 
 <ng-container class="contenedor--principal" *ngIf="!istrue">
     <div class="contenedor--principal">
         <div class="menu--imgs">
             <div (click)="onValid('paredInterior')">
-                <img src="/assets/images/Icono_paredes_interiores_1.png" width="100px" height="100px" alt="">
-                <p>Paredes interiores</p>
+                @if (this.selectedOption === 'paredInterior'){
+                    <img src="/assets/images/Menu/pared interiorn oscuro.png" width="100px" height="100px" alt="">
+                    <p style="color: #4d4d4d;">Paredes interiores</p>
+                } @else {
+                    <img src="/assets/images/Menu/pared interiorn claro.png" width="100px" height="100px" alt="">
+                    <p style="color: #504c4c;">Paredes interiores</p>
+                }
+                
             </div>
             <div class="medio" (click)="onValid('revestimientos')">
-                <img src="/assets/images/Icono_paredes_interiores_2.png" width="100px" height="100px" alt="">
-                <p>Revestimientos</p>
+                @if (this.selectedOption === 'revestimientos') {
+                    <img src="/assets/images/Menu/Revestimiento_oscuro.png" width="100px" height="100px" alt="">
+                    <p style="color: #4d4d4d;">Revestimientos</p>
+                } @else {
+                    <img src="/assets/images/Menu/Revestimiento_claro.png" width="100px" height="100px" alt="">
+                    <p style="color: #504c4c;">Revestimientos</p>
+                }
+                
             </div>
             <div (click)="onValid('cielorraso')">
-                <img src="/assets/images/Icono_paredes_interiores_3.png" width="100px"  height="100px">
-                <p>Cielorraso</p>
+                @if (this.selectedOption === 'cielorraso') {
+                    <img src="/assets/images/Menu/cielorraso_oscuro.png" width="100px"  height="100px">
+                    <p style="color: #4d4d4d;">Cielorraso</p>
+                } @else {
+                    <img src="/assets/images/Menu/cielorraso_claro.png" width="100px"  height="100px">
+                    <p style="color: #504c4c;">Cielorraso</p>
+                }
+                
             </div>
 
         </div>
