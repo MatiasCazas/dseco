@@ -115,6 +115,7 @@
 
         </div>
         <div class="vl"></div>
+        
         <div class="menu--display">
            <div class="images"> 
                 <div *ngIf="selectedOption === 'paredInterior'"> 
@@ -145,38 +146,41 @@
                     <h2 class="h2--medidas"> MEDIDAS</h2>
                     <p>Ingresá el largo y alto de las paredes a realizar para saber los materiales que vas a necesitar</p>
                 </div>
-                <form (formGroup)="paredForm">
-                    <div formArrayName="formArray">
-                        <div *ngFor="let formGroup of formArray; let i = index" (formGroup)="formGroup">
-                          <p class="pared--p">Pared {{i + 1}}</p>
-                          <div class="formS">
-                            <div class="form-group col-md-4">
-                                <label for="largo" class="font-weight-bold">Largo</label>
-                                <input type="number" class="form-control" formControlName="largo" id="largo">
+                <div class="d-flex justify-content-center align-items-center">
+                    <form (formGroup)="paredForm" class="">
+                        <div formArrayName="formArray">
+                            <div *ngFor="let formGroup of formArray; let i = index" (formGroup)="formGroup">
+                              <p class="pared--p">Pared {{i + 1}}</p>
+                              <div class="formS">
+                                <div class="form-group col-md-4">
+                                    <label for="largo" class="font-weight-bold">Largo</label>
+                                    <input type="number" class="form-control" formControlName="largo" id="largo">
+                                  </div>
+                                  <span><strong>X</strong></span>
+                                  <div class="form-group col-md-4">
+                                    <label for="alto" class="font-weight-bold">Alto</label>
+                                    <input type="number" class="form-control" formControlName="alto" id="alto">
+                                  </div>
+                                  <span><strong>=</strong></span>
+                                  <div class="form-group col-md-4">
+                                    <label for="superficie" class="font-weight-bold">Superficie</label>
+                                    <input type="number" class="form-control" formControlName="superficie" id="superficie">
+                                  </div>
+                                </div>
+                              </div>           
                               </div>
-                              <span><strong>X</strong></span>
-                              <div class="form-group col-md-4">
-                                <label for="alto" class="font-weight-bold">Alto</label>
-                                <input type="number" class="form-control" formControlName="alto" id="alto">
-                              </div>
-                              <span><strong>=</strong></span>
-                              <div class="form-group col-md-4">
-                                <label for="superficie" class="font-weight-bold">Superficie</label>
-                                <input type="number" class="form-control" formControlName="superficie" id="superficie">
-                              </div>
-                            </div>
-                          </div>           
-                          </div>
-                                   
-                    <div class="agregar--formulario" (click)="addForm()">
-                        <img src="/assets/images/plus.png" alt="">
-                        <span>AGREGAR FORMULARIO</span>
-                    </div>
-                    <div class="botones--cv">
-                        <button type="submit" class="btn btn-secondary text-light">Calcular</button>
-                        <button type="submit" (click)="volver()" class="btn btn-secondary text-light">Volver</button>
-                    </div>
-                </form>
+                                       
+                        <div class="agregar--formulario" (click)="addForm()">
+                            <img src="/assets/images/plus.png" alt="">
+                            <span>AGREGAR FORMULARIO</span>
+                        </div>
+                        <div class="botones--cv">
+                            <button type="submit" class="btn btn-secondary text-light">Calcular</button>
+                            <button type="submit" (click)="volver()" class="btn btn-secondary text-light">Volver</button>
+                        </div>
+                    </form> 
+                </div>
+
             </div>
         </div>
     </div>
