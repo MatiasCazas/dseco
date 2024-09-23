@@ -18,14 +18,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   articulos: any[] = []
 
-<<<<<<< HEAD
   images: string[] = ['assets/images/Banners-Digi-seco_1.png', 'assets/images/Banners-Digi-seco_3.png'];
-
-=======
-  images: string[] = ['assets/images/uno.jpeg','assets/images/dos.jpeg','assets/images/tres.jpeg'];
-  currentIndex = 0;
-  translateValue = 0; 
->>>>>>> 1d5b4da58cb6327e6c80c7406ef781443fddfc76
 
   async ngOnInit(){
     this.ngZone.runOutsideAngular(() => {
