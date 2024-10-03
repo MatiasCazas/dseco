@@ -1,0 +1,29 @@
+.principal{
+    background-color: rgba(128, 128, 128, 0.74);
+    height: 100vh;
+}
+
+li {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 800;
+    font-size: 1.5rem; 
+  }
+  
+  li.selected {
+    color: #e53531;
+    border-bottom: 2px solid #3f3f3f    ;
+  }
+  
+  li:not(.selected) {
+    color: #3f3f3f; 
+  }
+  
+li:hover{
+    color: #e53531;
+}
+
+.las{
+    display: flex;
+    flex-direction: row;
+}
