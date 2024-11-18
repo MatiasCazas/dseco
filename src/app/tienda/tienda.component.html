@@ -36,51 +36,141 @@
     <div style="background-color: #d7d7d7; position: relative;">
         <img class="img--arrow" (click)="goToTienda()" src="assets/icons/redarrow.svg" alt="" width="70px">
     </div>
-    <div style="display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
-        <div style="display: flex; gap: 0.5rem"> 
-            <div class="image-grid">
-                <div class="expanded-container" *ngIf="expandedImageSrc" style="border-bottom: 2px solid #d7d7d7; display: flex; align-items: center; justify-content: center;">
-                    <img [src]="expandedImageSrc" id="expandedImg" width="350px" height="350px" />
-                </div>
-                @for (img of images; track img) {
-                    <img [src]="img.src" alt=""  width="130px" height="130px" (click)="expandImage(img)">
-                }
-            </div>
-            <div style="display: flex; flex-direction: column; gap:1rem;">
-                <h1 style="color: #de3333;">Nombre del producto</h1>
-                <h2 style="color: #3e3c3d;">$XXX.xx</h2>
-                <div style="display: flex; gap: 1.3rem;">
-                    <img src="assets/images/deliverytruck.png" alt="">
-                    <div style="display: flex; flex-direction: column;">
-                        <h6>Retirá gratis en tienda o acordá el envío</h6> <br>
-                        <span>Ver modo de envío</span>    
+    <div>
+        @if (flag === true) {
+            <div style="display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
+                <div style="display: flex; gap: 0.5rem"> 
+                    <div class="image-grid">
+                        <div class="expanded-container" *ngIf="expandedImageSrc" style="border-bottom: 2px solid #d7d7d7; display: flex; align-items: center; justify-content: center;">
+                            <img [src]="expandedImageSrc" id="expandedImg" width="350px" height="350px" />
+                        </div>
+                        @for (img of images; track img) {
+                            <img [src]="img.src" alt=""  width="130px" height="130px" (click)="expandImage(img)">
+                        }
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap:1rem;">
+                        <h1 style="color: #de3333;">Nombre del producto</h1>
+                        <h2 style="color: #3e3c3d;">$XXX.xx</h2>
+                        <div style="display: flex; gap: 1.3rem;">
+                            <img src="assets/images/deliverytruck.png" alt="">
+                            <div style="display: flex; flex-direction: column;">
+                                <h6>Retirá gratis en tienda o acordá el envío</h6> <br>
+                                <span>Ver modo de envío</span>    
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1.3rem;">
+                            <img src="assets/images/devolver.png" alt="">
+                            <div style="display: flex; flex-direction: column;">
+                                <h6>Retirá gratis en tienda o acordá el envío</h6> <br>
+                                <span>Ver modo de envío</span>    
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1.3rem;">
+                            <h6>Cantidad</h6>
+                            <input type="number" min="1" width="10px" style="width: 3em;" name="" id="">
+                        </div>
+                        <button type="button" (click)="goToProduct()" style="color: white; background-color: #de3333; width: 225px; border-radius: 40px; height: 50px;">+ COMPRAR AHORA</button>
+                        <button type="button" style="color: white; background-color: #b4b4b4; width: 225px; border-radius: 40px; height: 50px;">+ AÑADIR AL CARRO</button>
                     </div>
                 </div>
-                <div style="display: flex; gap: 1.3rem;">
-                    <img src="assets/images/devolver.png" alt="">
-                    <div style="display: flex; flex-direction: column;">
-                        <h6>Retirá gratis en tienda o acordá el envío</h6> <br>
-                        <span>Ver modo de envío</span>    
+                <div style="margin-top: 30px;">
+                    <h2 style="color: #de3333;">
+                        Descripción del producto
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reprehenderit blanditiis nesciunt dolorum est repellat necessitatibus iste soluta dolore molestiae inventore aspernatur in, modi voluptate unde delectus. Earum, beatae quod?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis tenetur quasi nesciunt ad consectetur iure, ipsam neque veritatis odit asperiores optio aspernatur? Doloribus minus optio inventore deserunt libero, harum beatae.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius nobis nemo illo provident debitis doloribus! Error, facere dolorum fuga autem, earum provident fugiat architecto doloremque asperiores, commodi ad est.
+                    </p>
+                </div>
+            </div>
+        }
+        @else { 
+            <div class="container d-flex" style="padding-top: 5%; padding-bottom: 5%;">
+                <div class="row  justify-content-start" style="align-items: start;">
+                    <div class="col d-flex gap-5 flex-column">
+                        <h2 style="color: #de3333; font-size: 3rem;">Detalles del pedido</h2>
+                        <div class="d-flex flex-column justify-content-evenly">
+                            <!-- Headers -->
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="d-flex flex-row">
+                                    <div style="width: 80px;">
+                                        <p style="color: #de3333;">Cant.</p>
+                                    </div>
+                                    <div style="width: 80px;">
+                                        <p style="color: #de3333;">Unid.</p>
+                                    </div>
+                                    <div style="width: 200px;">
+                                        <p style="color: #de3333;">Producto</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div style="width: 100px;">
+                                        <p style="color: #de3333;">P. unit</p>
+                                    </div>
+                                    <div style="width: 100px;">
+                                        <p style="color: #de3333;">Total</p>
+                                    </div>
+                                </div>
+                                <div style="width: 120px;">
+                                </div>
+                            </div>
+                
+                            <div>
+                                <hr style="border: 1px solid #999999; width: 800px;">
+                            </div>
+                
+                            <!-- Content -->
+                            <div class="d-flex flex-row justify-content-between">
+                                <div class="d-flex flex-row">
+                                    <div style="width: 80px; color:#a7a7a7">2</div>
+                                    <div style="width: 80px; color:#a7a7a7">1</div>
+                                    <div style="width: 200px; color:#a7a7a7">Nombre Producto</div>
+                                </div>
+                                <div class="d-flex flex-row">
+                                    <div style="width: 100px; color:#a7a7a7">$00.000</div>
+                                    <div style="width: 100px; color:#a7a7a7">$00.000</div>
+                                </div>
+                                <div class="d-flex flex-row gap-2" style="width: 120px;">
+                                    <div style="width: 15px; height: 15px; background-color: #00b740; border-radius: 50%;"></div>
+                                    <img src="assets/icons8-trash.svg" alt="" width="20px" height="20px">
+                                    <img src="assets/icons8-minus-32.png" alt="" width="20px" height="20px">
+                                    <img src="assets/icons8-plus.svg" alt="" width="20px" height="20px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-row align-content-center gap-1 ">
+                            <img src="assets/icons8-plus.svg" alt="" width="20px" height="20px">
+                            <p style="color:#a7a7a7">Agregar mas productos</p>
+                        </div>
+                    </div>
+                    <div class="col d-flex flex-column gap-3" style="background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">
+                        <h6 style="color: #de3333; font-weight: 900;">Resumen de tu compra</h6>
+                        <div class="d-flex flex-column">
+                            <p style="color: #646464;">
+                                Total a pagar
+                            </p>
+                            <p style="color: #646464; font-size: xx-large; font-weight: 600;">
+                                $00.000
+                            </p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-around align-items-center" style="background-color: #cdcdcd; text-align: center;">
+                            <img src="assets/transeferencia.png" width="50px" height="50px" alt="">
+                            <p>Depósito o transferencia</p>
+                        </div>
+                        <div class="d-flex flex-row justify-content-around align-items-center" style="background-color: #cdcdcd; text-align: center;">
+                            <img src="assets/tarjeta.png" width="50px" height="50px" alt="">
+                            <p>Tarjeta o mercado pago</p>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" style="color: #fed0d3; background-color: #de3333; width: 150px; border-radius: 40px; height: 50px;">COMPRAR</button>
+                        </div>  
                     </div>
                 </div>
-                <div style="display: flex; gap: 1.3rem;">
-                    <h6>Cantidad</h6>
-                    <input type="number" min="1" width="10px" style="width: 3em;" name="" id="">
-                </div>
-                <button type="button" style="color: white; background-color: #de3333; width: 225px; border-radius: 40px; height: 50px;">+ COMPRAR AHORA</button>
-                <button type="button" style="color: white; background-color: #b4b4b4; width: 225px; border-radius: 40px; height: 50px;">+ AÑADIR AL CARRO</button>
             </div>
-        </div>
-        <div style="margin-top: 30px;">
-            <h2 style="color: #de3333;">
-                Descripción del producto
-            </h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magni reprehenderit blanditiis nesciunt dolorum est repellat necessitatibus iste soluta dolore molestiae inventore aspernatur in, modi voluptate unde delectus. Earum, beatae quod?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis tenetur quasi nesciunt ad consectetur iure, ipsam neque veritatis odit asperiores optio aspernatur? Doloribus minus optio inventore deserunt libero, harum beatae.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur eius nobis nemo illo provident debitis doloribus! Error, facere dolorum fuga autem, earum provident fugiat architecto doloremque asperiores, commodi ad est.
-            </p>
-        </div>
-    </div>
-</div>
+            
+    }
+
+<!--  -->
+
  

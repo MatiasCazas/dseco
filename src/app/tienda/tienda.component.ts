@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ValueProvider } from '@angular/core';
 import { ProductoComponent } from '../producto/producto.component';
 import { CommonModule } from '@angular/common';
 import {Router} from '@angular/router';
@@ -12,9 +12,8 @@ import {Router} from '@angular/router';
 })
 export class TiendaComponent {
   imgUno = ['imgs/img1.jpg', 'imgs/img1.jpg','imgs/img1.jpg','imgs/img1.jpg','imgs/img1.jpg','imgs/img1.jpg'];
-  description = true;
- 
-  flag = false;
+  description = true ;
+  flag  = false;
   selectOption = 'placas';
 
   constructor(private router: Router){
@@ -22,12 +21,22 @@ export class TiendaComponent {
   }
   goToDescripcion(): void{
     this.description = false;
+    this.flag = true;
     this.router.navigate(['/descripcion'])
+  }
+  goToProduct(): void{
+    this.flag = false;
   }
 
   goToTienda(){
-    this.description = true;
-    this.router.navigate(['/tienda'])  
+    if(this.flag === true){
+      this.description = true;
+      this.router.navigate(['/tienda'])
+    }
+    else{
+      this.description = false;
+      this.flag = true;
+    }  
   }
 
   expandedImageSrc: string = '';
@@ -48,6 +57,7 @@ export class TiendaComponent {
     this.flag = true;
     this.selectOption = str;
   }
+
 
   items = ['Placas', 'Revestiminetos', 'Pinturas', 'Herramientas', 'Adesivos', 'Masils']; 
   selectedItem: string | null = null;
