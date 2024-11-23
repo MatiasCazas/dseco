@@ -1,31 +1,64 @@
 .principal{
-    background-color: rgba(128, 128, 128, 0.74);
-    height: 100vh;
+  background-color: rgba(128, 128, 128, 0.74);
+  height: 100vh;
+}
+
+.productos-grid {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+  gap: 0.4rem; /* Spacing between items */
+  margin-top: 10px;
+}
+
+app-producto {
+  width: 100%; /* Ensure components fit within the grid cell */
+  box-sizing: border-box; /* Include padding/borders in width calculations */
+}
+
+.roboto-slab{
+	font-family: "Roboto Slab", serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+}
+
+.dseco-red{
+  background-color: #E63233;
+}
+
+.active-filter-button{
+  background-color: #E63233;
+  color: white;
+}
+
+.inactive-button{
+  background-color: #f4f3f3;
+  color: black;
 }
 
 li {
-    cursor: pointer;
-    list-style: none;
-    font-weight: 800;
-    font-size: 1.5rem; 
-  }
+  cursor: pointer;
+  list-style: none;
+  font-weight: 800;
+  font-size: 1.5rem; 
+}
   
-  li.selected {
-    color: #e53531;
-    border-bottom: 2px solid #3f3f3f    ;
-  }
+li.selected {
+  color: #e53531;
+  border-bottom: 2px solid #3f3f3f    ;
+}
   
-  li:not(.selected) {
-    color: #3f3f3f; 
-  }
+li:not(.selected) {
+  color: #3f3f3f; 
+}
   
 li:hover{
-    color: #e53531;
+  color: #e53531;
 }
 
 .las{
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 }
 p{
   margin: 0;

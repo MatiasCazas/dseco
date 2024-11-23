@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-producto',
@@ -9,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class ProductoComponent {
 
+  @Input() precio: any
+  @Input() descripcion: any
+ 
+  constructor(){}
+
+  ngOnInit(){
+    console.log(this.precio)
+    console.log(this.descripcion)
+  }
+  
 }
