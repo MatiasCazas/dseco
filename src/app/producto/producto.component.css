@@ -1,7 +1,6 @@
 .producto{
     width: 280px;
     height: 380px !important;
-    
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -10,4 +9,23 @@
     border: solid 2px #c3c3c3;
     border-radius: 5%;
     padding: 2% 3%;
+    width: 18rem;
+    margin-top: 2rem;
+    
+}
+.contedor--card--titlte{
+    height: 50px; 
+    width: 228px;
+}
+
+h5{
+    color: #E63233; 
+    font-size: large;
+}
+
+.card-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
 }

@@ -1,15 +1,26 @@
 
-<div class="card producto" style="width: 18rem;margin-top: 2rem;">
+<div class="card producto">
     <img class="card-img-top" src="assets/img1.jpg" width="180px" height="180px" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title" style="color: #E63233;">
-            {{descripcion}}
-        </h5>
-        <h3 class="card-text">${{precio}}</h3>
-        <a href="#" class="btn" style="background-color: #E63233;color: white;">
-            <img src="assets/icons/plus-circle.svg" height="18" style="margin-right: 05.rem;">
-            Añadir
-        </a>
+        <div class="d-flex flex-column justify-content-between" style="height: 150px;">
+            <div #contenedorCard class="contedor--card--titlte">
+                <h5 #texto title="{{descripcion}}">
+                     {{ descripcion }}
+                </h5>
+            </div>
+            <div>
+                <h3 class="card-text">${{precio}}</h3>
+            </div>
+            <div>
+                <a href="#" class="btn" style="background-color: #E63233;color: white;">
+                    <img src="assets/icons/plus-circle.svg" height="18" style="margin-right: 05.rem;">
+                    Añadir
+                </a>
+            </div>
+        </div>
+
+        
+
     </div>
   </div>
 
