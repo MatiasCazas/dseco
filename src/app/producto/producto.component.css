@@ -1,6 +1,7 @@
 .producto{
-    width: 220px;
-    height: fit-content;
+    width: 280px;
+    height: 380px !important;
+    
     display: flex;
     flex-direction: column;
     text-align: center;

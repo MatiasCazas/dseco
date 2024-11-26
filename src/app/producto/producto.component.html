@@ -1,10 +1,24 @@
 
-<div class="producto">
-    <img src="assets/img1.jpg" alt="" width="150px" height="150px">
-    <h5>{{descripcion}}</h5>
-    <span>${{precio}}</span>
-    <button class="btn btn-danger">
+<div class="card producto" style="width: 18rem;margin-top: 2rem;">
+    <img class="card-img-top" src="assets/img1.jpg" width="180px" height="180px" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title" style="color: #E63233;">
+            {{descripcion}}
+        </h5>
+        <h3 class="card-text">${{precio}}</h3>
+        <a href="#" class="btn" style="background-color: #E63233;color: white;">
+            <img src="assets/icons/plus-circle.svg" height="18" style="margin-right: 05.rem;">
+            Añadir
+        </a>
+    </div>
+  </div>
+
+<!-- <div class="producto" style="margin-top: 2rem;">
+    <img src="assets/img1.jpg" alt="" width="180px" height="180px">
+    <h5 style="color: #E63233;">{{descripcion}}</h5>
+    <h3>${{precio}}</h3>
+    <button class="btn" style="background-color: #E63233;color: white;">
         <img src="assets/icons/plus-circle.svg" height="18" style="margin-right: 05.rem;">
         Añadir
     </button>
-</div>
+</div> -->

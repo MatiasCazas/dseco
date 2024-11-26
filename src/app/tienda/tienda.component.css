@@ -63,3 +63,17 @@ li:hover{
 p{
   margin: 0;
 }
+
+.producto {
+  flex: 0 0 220px; /* Ancho fijo de 220px */
+  height: 239px; /* Altura fija de 239px */
+  box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño */
+  display: flex;
+  flex-direction: column; /* Permite alinear el contenido verticalmente */
+  justify-content: space-between; /* Espacio entre los elementos internos */
+  align-items: center; /* Centra los elementos horizontalmente */
+  border: 1px solid #ccc; /* Opcional: Estilo del borde */
+  border-radius: 8px; /* Opcional: Esquinas redondeadas */
+  overflow: hidden; /* Opcional: Recorta contenido excedente */
+  padding: 10px; /* Opcional: Espaciado interno */
+}

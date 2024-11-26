@@ -42,8 +42,8 @@
                 </button>
               </div>
 
-            <div>
-                <app-producto *ngFor="let p of listaProductos" [precio]="p.PrecioVtaSinIva" [descripcion]="p.Descripcion" (click)="goToDescripcion(p.IdArticulo)"></app-producto>
+            <div class="row" style="display: flex;flex-wrap: wrap;">
+                <app-producto class="col" *ngFor="let p of listaProductos" [precio]="p.PrecioVtaSinIva" [descripcion]="p.Descripcion" (click)="goToDescripcion(p.IdArticulo)"></app-producto>
              </div>
  
          </div>
