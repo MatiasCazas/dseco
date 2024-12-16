@@ -1,5 +1,5 @@
 .producto{
-    width: 280px;
+    width: 320px;
     height: 380px !important;
     
     display: flex;
@@ -10,4 +10,11 @@
     border: solid 2px #c3c3c3;
     border-radius: 5%;
     padding: 2% 3%;
+}
+
+.roboto-slab{
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
