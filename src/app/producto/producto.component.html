@@ -2,16 +2,17 @@
 <div class="card producto" style="width: 19rem;margin-top: 2rem;">
     <img class="card-img-top" src="assets/img1.jpg" width="170px" height="210px" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title " style="color: #E63233;height: 45px !important;overflow: hidden !important;">
+        <h5 class="card-title " style="color: #E63233;height: 45px !important;overflow: hidden !important;text-overflow: clip; "> 
+            <!--laskdn-->
             {{descripcion}}
         </h5>
         <h3 class="card-text">${{precio}}</h3>
-        <a href="#" class="btn" style="background-color: #E63233;color: white;border-radius: 30px;">
+        <a class="btn" style="background-color: #E63233;color: white;border-radius: 30px;" (click)="addItemToCart()">
             <img src="assets/icons/plus-circle.svg" class="roboto-slab" height="18" style="margin-right: 05.rem;">
             AÑADIR
         </a>
     </div>
-  </div>
+</div>
 
 <!-- <div class="producto" style="margin-top: 2rem;">
     <img src="assets/img1.jpg" alt="" width="180px" height="180px">

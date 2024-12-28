@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { ArticulosService } from './services/articulos.service';
+import { CartService } from './services/cart.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { ArticulosService } from './services/articulos.service';
     BrowserModule,
     HttpClientModule // Import HttpClientModule here
   ],
-  providers: [ArticulosService], // Provide your service
+  providers: [ArticulosService, CartService], // Provide your service
   bootstrap: [AppComponent] // Bootstrap your main component
 })
 

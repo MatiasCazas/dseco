@@ -1,5 +1,6 @@
 import { Component, Input, ElementRef, ViewChild, AfterViewInit, Renderer2} from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-producto',
@@ -20,15 +21,17 @@ export class ProductoComponent implements AfterViewInit {
     }
   }
 
+  @Input() producto: any;
   @Input() precio: any
   @Input() descripcion: any
  
-  constructor(private renderer : Renderer2){}
+  constructor(
+    private renderer : Renderer2,
+    private cartService: CartService
+  ){}
 
   ngOnInit(){
-    console.log(this.precio)
-    console.log(this.descripcion)
-
+    
   }
 
   textoSuperaAltura() {
@@ -40,6 +43,10 @@ export class ProductoComponent implements AfterViewInit {
     if (alturaTexto > alturaContenedor) {
       this.renderer.addClass(this.texto.nativeElement, 'card-title');
     }
+  }
+
+  addItemToCart(){  
+    this.cartService.addItem(this.producto)
   }
   
 }

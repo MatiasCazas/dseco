@@ -19,26 +19,15 @@
         <div class="container">
           <!-- <div class="row justify-content-end">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">   
-                  <div class="input-group  border-0" style="margin-bottom: 2%;">
-                    <input class="form-control me-2 search border-0 input-round" style="max-width: 700px;" type="search"  aria-label="Buscar">
-                    <div class="input-group-append border-0">
-                      <span class="input-group-text border-0 input-icon-round" style="">
-                          <i class="fa fa-search"></i>
-                      </span>
-                    </div>
-                  </div>
+                <li class="nav-item position-relative" style="padding-top: 0.5rem;">
+                    <img src="assets/icons/cart-white.svg" height="25px" alt="Carrito">
                     
-                </li>
-                <li class="nav-item" style="padding-top: 0.5rem;">
-                    <img src="assets/icons/usr-white.svg" height="25px">
-                </li>
-                <li class="nav-item" style="padding-top: 0.5rem;">
-                    <img src="assets/icons/cart-white.svg" height="25px">
+                    <span id="cart-count" class="badge position-absolute top-0 start-100 translate-middle badge-pill bg-light">
+                      2
+                    </span>
                 </li>
             </ul>
-            
-          </div> -->
+        </div> -->
           <div class="row justify-content-between" style="padding-top: 0.5rem;">
             <div class="col-auto justify-content-center">
                 <ul class="navbar-nav mb-2 mb-lg-0 justify-content-center" style="padding-left: 0rem;">
@@ -72,6 +61,14 @@
                   </li>
                   <li class="nav-item">
                     <a href="https://www.instagram.com/grupodigi/" target="_blank"><img src="assets/icons/ig-white.svg" height="30px" style="margin-right: 10px;"></a>
+                  </li>
+
+                  <li class="nav-item position-relative" style="padding-top: 0.5rem;">
+                    <img src="assets/icons/cart-white.svg" height="25px" alt="Carrito">
+                    <!-- Contador del carrito -->
+                    <span id="cart-count" class="badge position-absolute top-0 start-100 translate-middle badge-pill bg-light" *ngIf="carrito.length > 0">
+                      {{carrito.length}}
+                    </span>
                   </li>
                   <!-- <li class="nav-item">
                       <img src="assets/icons/ln-white.svg" height="30px">
