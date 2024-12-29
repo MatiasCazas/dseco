@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import {Router} from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MercadoPagoService } from '../services/mercadopago.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,8 @@ export class CartComponent {
 
   constructor(
     private cartService: CartService,
-    private router: Router
+    private router: Router,
+    private mercadoPago: MercadoPagoService
   ){}
 
   carrito: Array<any> = []
@@ -69,6 +71,17 @@ export class CartComponent {
     if(this.subscription){
       this.subscription.unsubscribe()
     }
+  }
+
+  createCheckout(){
+    this.mercadoPago.createCheckout().subscribe({
+        next: (response: any) =>{ 
+          window.open(response.sandbox_init_point, '_blank')
+          console.log(response)
+        },
+        error: (error: any) => console.error(error)
+    })
+    
   }
 
 }

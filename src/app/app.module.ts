@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ArticulosService } from './services/articulos.service';
 import { CartService } from './services/cart.service';
+import { MercadoPagoService } from './services/mercadopago.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { CartService } from './services/cart.service';
     HttpClientModule, // Import HttpClientModule here
     FormsModule
   ],
-  providers: [ArticulosService, CartService], // Provide your service
+  providers: [ArticulosService, CartService, MercadoPagoService], // Provide your service
   bootstrap: [AppComponent] // Bootstrap your main component
 })
 
