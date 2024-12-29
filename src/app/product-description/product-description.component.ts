@@ -2,11 +2,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ArticulosService } from '../services/articulos.service';
 import { CartService } from '../services/cart.service';
 import { Component, Input, ElementRef, ViewChild, AfterViewInit, Renderer2} from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-description',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './product-description.component.html',
   styleUrl: './product-description.component.css'
 })
@@ -23,6 +24,7 @@ export class ProductDescriptionComponent {
   ];
   descripcionActiva: any
   producto: any = {}
+  quantity: number = 1
 
   constructor(
     private cartService: CartService,
@@ -50,7 +52,8 @@ export class ProductDescriptionComponent {
   }
 
   addToCart(p: any){
-    this.cartService.addItem(this.producto)
+    console.log(this.quantity)
+    this.cartService.addItem(this.producto, this.quantity)
   }
 
   goToProduct(){

@@ -31,9 +31,14 @@
                 <div>
                     <hr style="border: 1px solid #999999; width: 800px;">
                 </div>
-    
+
+
                 <!-- Content -->
+                <div *ngIf="carrito.length == 0">
+                    <p>No hay productos para mostrar</p>
+                </div>
                 <div class="d-flex flex-row justify-content-between" *ngFor="let producto of carrito" >
+                    
                     <div class="d-flex flex-row">
                         <div style="width: 80px; color:#a7a7a7">{{producto.quantity}}</div>
                         <div style="width: 80px; color:#a7a7a7">1</div>
@@ -45,15 +50,15 @@
                     </div>
                     <div class="d-flex flex-row gap-2" style="width: 120px;">
                         <div style="width: 15px; height: 15px; background-color: #00b740; border-radius: 50%;"></div>
-                        <img src="assets/icons8-trash.svg" alt="" width="20px" height="20px">
-                        <img src="assets/icons8-minus-32.png" alt="" width="20px" height="20px">
-                        <img src="assets/icons8-plus.svg" alt="" width="20px" height="20px">
+                        <img src="assets/icons8-trash.svg" alt="" width="20px" height="20px" (click)="deleteProductFromCart(producto.p.IdArticulo)">
+                        <img src="assets/icons8-minus-32.png" alt="" width="20px" height="20px" (click)="substractProduct(producto.p.IdArticulo)">
+                        <img src="assets/icons8-plus.svg" alt="" width="20px" height="20px" (click)="addProductoToCart(producto.p)">
                     </div>
                 </div>
             </div>
             <div class="d-flex flex-row align-content-center gap-1 ">
                 <img src="assets/icons8-plus.svg" alt="" width="20px" height="20px">
-                <p style="color:#a7a7a7">Agregar mas productos</p>
+                <p style="color:#a7a7a7" (click)="goTienda()">Agregar mas productos</p>
             </div>
         </div>
         <div class="col d-flex flex-column gap-3" style="background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">

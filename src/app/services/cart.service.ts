@@ -15,13 +15,14 @@ export class CartService {
 
     cartItems$ = this.cartItemsSubject.asObservable()
 
-    addItem(item: any): void{
+    addItem(item: any, quantity: number = 1): void{
         const existingItem = this.cartItems.find((cartItem: any) =>  cartItem.p.IdArticulo == item.IdArticulo) 
 
         if(existingItem){ 
-            existingItem.quantity++
+            if(quantity) existingItem.quantity + quantity
+            else existingItem.quantity++
         }else{ 
-            this.cartItems.push({p:item, quantity: 1})
+            this.cartItems.push({p:item, quantity: quantity})
         }
         console.log(this.cartItems)
         this.cartItemsSubject.next([...this.cartItems])
@@ -44,6 +45,20 @@ export class CartService {
 
     getTotalPrice(): number{
         return this.cartItems.reduce((total, item) => total + item.p.PrecioVtaSinIva * item.quantity, 0)
+    }
+
+    substractProduct(id:any){
+        const existingItem = this.cartItems.find((cartItem: any) => cartItem.p.IdArticulo == id);
+
+        if (existingItem) {
+            existingItem.quantity--;
+
+            if (existingItem.quantity <= 0) {
+                this.removeItem(id); // Si la cantidad es 0 o menor, elimina el producto
+            } else {
+                this.cartItemsSubject.next([...this.cartItems]);
+            }
+        }
     }
 
 }

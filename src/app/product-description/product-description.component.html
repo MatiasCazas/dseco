@@ -28,7 +28,7 @@
                 </div>
                 <div style="display: flex; gap: 1.3rem;">
                     <h6>Cantidad</h6>
-                    <input type="number" min="1" width="10px" style="width: 3em;" name="" id="">
+                    <input type="number" min="1" width="10px" style="width: 3em;" [(ngModel)]="quantity">
                 </div>
                 <button type="button" (click)="goToProduct()" style="color: white; background-color: #E63233; width: 225px; border-radius: 40px; height: 50px;">+ COMPRAR AHORA</button>
                 <button type="button" style="color: white; background-color: #b4b4b4; width: 225px; border-radius: 40px; height: 50px;" (click)="addToCart(descripcionActiva)">+ AÑADIR AL CARRO</button>
