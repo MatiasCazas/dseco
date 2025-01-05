@@ -1,9 +1,12 @@
 
-<div class="card producto" style="width: 19rem;margin-top: 2rem;">
+<div #contendorCard class="card producto" style="width: 19rem;margin-top: 2rem;">
     <img class="card-img-top" src="assets/img1.jpg" width="170px" height="210px" alt="Card image cap">
-    <div class="card-body">
-        <h5 class="card-title " style="color: #E63233;height: 45px !important;overflow: hidden !important;text-overflow: clip; "> 
+    <div  class="card-body">
+        <h5 #texto style="color: #E63233;height: 45px !important;overflow: hidden !important;text-overflow: clip; "
+        [ngClass]="{'card-title' : textoSuperaAltura()}"
+        > 
             <!--laskdn-->
+            
             {{descripcion}}
         </h5>
         <h3 class="card-text">${{precio}}</h3>
